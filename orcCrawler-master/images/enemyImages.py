@@ -3,7 +3,35 @@ enemyImages = {
 	"bandit":   "\nbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbb\nbbbbbbbbbbbbbbbbbbbb",
 	"orc":      "\noooooooooooooooooooo\noooooooooooooooooooo\noooooooooooooooooooo\noooooooooooooooooooo\noooooooooooooooooooo\noooooooooooooooooooo",
 	"goblin":   "\ngggggggggggggggggggg\ngggggggggggggggggggg\ngggggggggggggggggggg\ngggggggggggggggggggg\ngggggggggggggggggggg\ngggggggggggggggggggg",
-	"skeleton": "\nssssssssssssssssssss\nssssssssssssssssssss\nssssssssssssssssssss\nssssssssssssssssssss\nssssssssssssssssssss\nssssssssssssssssssss",
+	"skeleton":   """
+                                       .........                                 
+                             ..,,,,*,,,,,,,,,,,,,,,,.                           
+                       ..,****,,,**,,,,,,,,,,,,,*******,.                       
+                     .,/***,**/,,,,,,,***(,,,,,,,********,                      
+                    .*/**/,,,*,,,,,,,**,,,,,,,.,,*,,,,,,***                     
+                    ,*#*********,*,*****,,.....,,,,,,*,***/*                    
+                    ,*/*****************,,..,,,****,,*****(#*                   
+                   .**(*****((##*/((/**/********,.. ,,,,,,(/(                   
+                   .*(,*,*####%%%#%##((((((%%###%%######%#*((.                  
+                   .*/(##########%%##//,,,/%###########((((%(*                  
+                    *//#(###(###%%#%,.,..,,,(%%%%%%####(((/(#(                  
+                    **//(((((##%%%%(*,%&%%%**,%%&%%%##((/*///(.                 
+                    */****/((#%%&*..,&%/%%%#/**,,%%&#(/,,,,*(/,                 
+                    .**/*******,,*,*(%%%(%%%#//**/*#/((&(/*(*/*                 
+                    .//(/*,***,*,,,*#%%%%#%%#%/***/***(/////%((.                
+                     ,((#((/*****,,**#%&*.&&(#/**/,**#*&%%%%%%(                 
+                      ,/**&(//*/**,,,,,,(#**,*/.///(*#%%%%%%%(.                 
+                       *##&&%,,***/.,,,,,*,/,,.,***//&%%#%%%#.                  
+                        /(&%&*(#,*(@,%*****#//%**#&((%%%%%%#,                   
+                        ,(%#&#(*#%/(%#&#&,,//#,#*#&%(&%%%%%/                    
+                         *#%**(##%#/&#&&&&%&.%&&%%#%%&##%&%*                    
+                          *#(*/#//%#(*,%,&&%/%(%/%%(&%##%&(.                    
+                           */*/(//(%&(%%%#*####%&&%&%##%&#.                     
+                            ,////((((/(///#/((#%%&&#%#%#(                       
+                             .***//(((/****(((((###(#/.                         
+                               ./%#(////#(((///(###*                            
+                                .(%%%%%%%%%%%%%%%%/                             
+                                ./##%%%##%%%%%%%%%(.                             """,
 
 	
 	"zombie":   """                                                                                

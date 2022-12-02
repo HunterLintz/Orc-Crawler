@@ -5,37 +5,9 @@ import pickle
 
 from classes.enemy import Enemy
 from classes.player import Player
+from classes.hats import hats
 from images.enemyImages import enemyImages
 from images.heroImages import heroImages
-
-global hatIndex
-
-hats = [
-	{
-		"hatType": "Fedora",
-		"cost": "20",
-		"coolPoints": -5,
-		"coolNum": "5"
-	}, 
-	{
-		"hatType": "Bowl Hat",
-		"cost": "40",
-		"coolPoints": 1,
-		"coolNum": "1"
-	},
-	{
-		"hatType": "Top Hat",
-		"cost": "30",
-		"coolPoints": 3,
-		"coolNum": "3"
-	},
-	{
-		"hatType": "Beanie",
-		"cost": "10",
-		"coolPoints": 2,
-		"coolNum": "2"
-	}	
-]
 
 # clearing terminal command is different for windows vs mac
 def checkOs():
@@ -170,71 +142,16 @@ def roomGen(player):
 def emptyRoom(player):
 	os.system(clear)
 	print("\n")
-	emptyRoomGen = random.randint(1,20)
-	if emptyRoomGen == 1:
-		print("You enter a room that is completely barren.")
+	hatCheck = random.randint(1, 20)
+	if hatCheck == 1:
+		print("You enter a room that contains a hat salesman.")
 		option = input(" ")
-	elif emptyRoomGen == 2:
-		print("You enter a room that has barrels and crates. It looks like a storage room of sorts.")
-		option = input(" ")
-	elif emptyRoomGen == 3:
-		print("You enter a room that has a fountain in the middle.")
-		option = input(" ")
-	elif emptyRoomGen == 4:
-		print("You enter a room that has a shrine to a god that you do not recognize.")
-		option = input(" ")
-	elif emptyRoomGen == 5:
-		print("You enter a room that contains a statue that bears an eerie resemblance to yourself.")
-		option = input(" ")
-	elif emptyRoomGen == 6:
-		print("You found a skeleton!")
-		option = input(" ")
-		print("Just a regular skeleton… In a room with nothing else.")
-		option = input(" ")
-	elif emptyRoomGen == 7:
-		print("You enter a room that contains crudely constructed gym equipment.")
-		option = input(" ")
-	elif emptyRoomGen == 8:
-		print('You enter a room that contains a hat salesman.')
-		option = input(" ")
-		hatSalesman(player)
-	elif emptyRoomGen == 9:
-		print("You enter a room that is only a 3 foot wide walkway with chasms on each side extending farther down than you can see.")
-		option = input(" ")
-	elif emptyRoomGen == 10:
-		print("You enter a room with thousands of obviously counterfeit gold pieces covering the floor.")
-		option = input(" ")
-	elif emptyRoomGen == 11:
-		print("You enter a room that has an ungodly amount of cobwebs.")
-		option = input(" ")
-	elif emptyRoomGen == 12:
-		print("You enter a room with a bag of sand gently balanced on a pedestal.")
-		option = input(" ")
-	elif emptyRoomGen == 13:
-		print("You enter a room that has a throne in the middle. This was obviously the throne room to a once great king.")
-		option = input(" ")
-	elif emptyRoomGen == 14:
-		print("You enter a room that contains a plethora of the finest cleaning supplies. \nThis was obviously the janitor’s closet for a janitor of a once great king.")
-		option = input(" ")
-	elif emptyRoomGen == 15:
-		print("You enter a room that is filled with coffins for the warriors of a once great army.")
-		option = input(" ")
-	elif emptyRoomGen == 16:
-		print("You enter a room that contains a perfect clone of yourself. Upon closer inspection it appears to simply be a well polished mirror.")
-		option = input(" ")
-	elif emptyRoomGen == 17:
-		print("You enter a room that is super bright. Upon closer inspection there is just a torch on the wall.")
-		option = input(" ")
-	elif emptyRoomGen == 18:
-		print("You enter a room. The walls are covered in the scrawlings of a strange, unknown language. Reading it makes your head spin.")
-		option = input(" ")
-	elif emptyRoomGen == 19:
-		print("You enter a room that looks to be a wizards old laboratory. There are messy notes and glass beakers everywhere.")
-		option = input(" ")
+		hatSalesman()
 	else:
-		print("You enter an unreasonably long hallway.")
-		option = input(" ")
-
+		with open('orcCrawler-master\classes\emptyRooms.txt') as f:
+			emptyRoomGen = f.readlines()
+			print(random.choice(emptyRoomGen))
+			option = input(" ")
 	stillExplore(player)
 
 def preFight():
@@ -667,14 +584,11 @@ def hatSalesman(player):
 		stillExplore(player)
 	else:
 		hatSalesman(player)
-		
+
 def hatSale(player):
 	global hatIndex
 	os.system(clear)
-	print(("Would you like a %s for %s gold?") % (hats[hatIndex]["hatType"],(hats[hatIndex]["cost"])))
-	print("1. Yes")
-	print("2. No")
-	option = input(" ")
+	option = input(("Would you like a %s for %s gold?\n1. Yes\n2. No\n") % (hats[hatIndex]["hatType"],(hats[hatIndex]["cost"])))
 
 	if option == "1":
 
