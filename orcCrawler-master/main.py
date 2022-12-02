@@ -65,7 +65,7 @@ def mainMenu():
 		choosePlayer()
 	elif option == "2":
 		print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-		nameOfFile = input("What was the name of the adventurer you would like to load?: ")
+		nameOfFile = ('orcCrawler-master/saves/') + input("What was the name of the adventurer you would like to load?: ")
 		if os.path.exists(nameOfFile) == True:
 			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 			PlayerIG = pickle.load(open(nameOfFile, "rb"))
@@ -148,7 +148,7 @@ def continueGame(player):
 	elif option == "3":
 		store(player)
 	elif option == "4":
-		pickle.dump(player, open(player.name, "wb"))
+		pickle.dump(player, open('orcCrawler-master/saves/' + player.name, "wb"))
 		os.system(clear)
 		print("\nGame has been saved!\n")
 		option = input(" ")
